@@ -12,7 +12,14 @@
 
 > 💡 **نکته:** فیلم کوتاه نحوه اجرای Error Trigger و ارسال هشدار خودکار به تلگرام را می‌توانید از لینک زیر مشاهده کنید:
 
-https://github.com/user-attachments/assets/YOUR_VIDEO_GUID_HERE
+
+
+
+
+
+
+https://github.com/user-attachments/assets/b2817a6a-158a-4c24-a980-5990a9ac77dc
+
 
 ---
 
