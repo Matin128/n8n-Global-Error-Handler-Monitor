@@ -1,0 +1,77 @@
+{
+  "name": "Global Error Handler",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        112
+      ],
+      "id": "3117d9cc-3933-4bde-b067-0bd7ab77d305",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "function escapeHTML(text) {\n  if (!text) return '';\n  return String(text)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/\"/g, '&quot;');\n}\n\nconst inputData = $input.first()?.json || {};\nconst execution = inputData.execution || {};\nconst workflow = inputData.workflow || {};\nconst error = execution.error || {};\n\nconst workflowName = escapeHTML(workflow.name || 'نامشخص');\nconst failedNode = escapeHTML(execution.lastNodeExecuted || 'نامشخص');\nconst errorMessage = escapeHTML(error.message || 'خطای غیرمنتظره');\nconst executionId = execution.id || '';\nconst executionUrl = execution.url || '';\n\nreturn [{\n  json: {\n    workflow_name: workflowName,\n    failed_node: failedNode,\n    error_message: errorMessage,\n    execution_id: executionId,\n    execution_url: executionUrl,\n    timestamp: new Date().toLocaleString('fa-IR', { timeZone: 'Asia/Tehran' })\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -144,
+        112
+      ],
+      "id": "81ad824b-15c2-4862-a45c-6ea29157bbde",
+      "name": "Sanitize & Process Error Data"
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=🚨 <b>خطای سیستم در n8n!</b>\n\n📌 <b>نام ورکفلو:</b> {{ $json.workflow_name }}\n🛠 <b>نود شکست‌خورده:</b> {{ $json.failed_node }}\n🕒 <b>زمان بروز خطا:</b> {{ $json.timestamp }}\n\n💥 <b>متن خطا:</b>\n<code>{{ $json.error_message }}</code>\n\n🔗 <a href=\"{{ $json.execution_url }}\">مشاهده و بررسی اجرای شکست‌خورده در n8n</a>",
+        "additionalFields": {
+          "appendAttribution": false,
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        80,
+        112
+      ],
+      "id": "48a005aa-3db5-494f-88aa-902e139099c3",
+      "name": "Send Telegram Alert"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Sanitize & Process Error Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sanitize & Process Error Data": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  }
+}
