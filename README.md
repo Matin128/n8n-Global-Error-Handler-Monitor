@@ -18,7 +18,10 @@ https://github.com/user-attachments/assets/YOUR_VIDEO_GUID_HERE
 
 ### 🗺 اسکرین‌شات جریان کاری (Workflow Canvas)
 
-n8n Global Error Handler Workflow.png
+
+
+
+<img width="1352" height="642" alt="n8n Global Error Handler Workflow" src="https://github.com/user-attachments/assets/6891e934-5eaf-41e7-be89-01bf0f7ad74e" />
 ---
 
 ## 🌟 ویژگی‌های کلیدی سیستم (Key Features)
