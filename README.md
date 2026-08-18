@@ -1,0 +1,1 @@
+# n8n-Global-Error-Handler-Monitor
