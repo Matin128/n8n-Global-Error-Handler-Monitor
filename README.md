@@ -22,10 +22,9 @@ https://github.com/user-attachments/assets/b2817a6a-158a-4c24-a980-5990a9ac77dc
 
 
 ---### اسکرین‌شات جریان کاری (Workflow Canvas)
-
 <p align="center">
-  <img src="./N8N Global Error Handler Workflow.png" alt="Global Error Handler Workflow" width="800">
-</p>## 🌟 ویژگی‌های کلیدی سیستم (Key Features)
+  <img src="./n8n%20Global%20Error%20Handler%20Workflow.png" alt="n8n Global Error Handler Workflow" width="800">
+</p>
 
 * **ربودن خودکار خطاها (Error Trigger Integration):** شنود مستقیم و بدون نیاز به دستکاری کدهای سایر ورکفلوها جهت دریافت سریع تمام شکست‌های سیستمی.
 * **پردازش و سالم‌سازی کدها (JavaScript Sanitizer):** نود کدنویسی‌شده برای اصلاح خودکار حروف خاص HTML (`<`, `>`, `&`) جهت جلوگیری از شکست پیام در تلگرام.
