@@ -22,13 +22,9 @@ https://github.com/user-attachments/assets/b2817a6a-158a-4c24-a980-5990a9ac77dc
 
 
 ---
+### اسکرین‌شات جریان کاری (Workflow Canvas)
 
-### 🗺 اسکرین‌شات جریان کاری (Workflow Canvas)
-
-
-
-
-<img width="1352" height="642" alt="n8n Global Error Handler Workflow" src="https://github.com/user-attachments/assets/6891e934-5eaf-41e7-be89-01bf0f7ad74e" />
+![نمای کلی ورکفلو](https://github.com/user-attachments/assets/02817a6a-15ba-4c24-a988-5999b9ac77dc)
 ---
 
 ## 🌟 ویژگی‌های کلیدی سیستم (Key Features)
